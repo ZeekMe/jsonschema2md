@@ -8,8 +8,9 @@
 #### <%=name %>
 <% if (schema.title) { %>##### <%= schema.title %><% } %>
 
-
+<% if (schema.const!=="undefined") { %>
 <%- (""+schema.description).replace(/\n/g, '\n\n') %>
+<% } %>
 
 
 `<%=name %>`
