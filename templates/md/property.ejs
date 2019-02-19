@@ -8,12 +8,9 @@
 ## <%=name %>
 <% if (schema.title) { %>### <%= schema.title %><% } %>
 
-<% if (schema.description) { %>
+<% if (schema.description&&schema.description !== "undefined") { %>
 <%- schema.description.replace(/\n/g, '\n\n') %>
 <% } %>
-
-`<%=name %>`
-
 
 * is <% if (required) { %>**required**<% } else { %>optional<% } %>
 * type: <%=schema.simpletype %><% if (schema.simpletype.match(/\[\]\[\]/)||schema.simpletype==="`array[]`") { %> (nested array)<% } %>
